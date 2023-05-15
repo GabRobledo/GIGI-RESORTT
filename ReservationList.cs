@@ -15,8 +15,11 @@ namespace GIGI_RESORTT
 
         private DataTable LoadDataFromDatabase()
         {
-            string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\KentGab\Desktop\Resort System\GIGI RESORTT\ResortReservationSystem.mdb";
+            string fileName = "ResortReservationSystem.mdb";
+            string path = AppDomain.CurrentDomain.BaseDirectory + fileName;
+            string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + path;
             OleDbConnection connection = new OleDbConnection(connectionString);
+
 
             try
             {
@@ -88,8 +91,11 @@ namespace GIGI_RESORTT
                 int reservationId = Convert.ToInt32(dataGridView1[0, selectedIndex].Value);
 
                 // Create a connection to the database
-                string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\KentGab\Desktop\Resort System\GIGI RESORTT\ResortReservationSystem.mdb";
+                string fileName = "ResortReservationSystem.mdb";
+                string path = AppDomain.CurrentDomain.BaseDirectory + fileName;
+                string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + path;
                 OleDbConnection connection = new OleDbConnection(connectionString);
+
 
                 try
                 {
@@ -121,6 +127,29 @@ namespace GIGI_RESORTT
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string searchText = textBox1.Text.ToLower();
+            bool found = false;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchText))
+                    {
+                        dataGridView1.CurrentCell = cell;
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) break;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

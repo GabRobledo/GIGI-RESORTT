@@ -36,8 +36,11 @@ namespace GIGI_RESORTT
 
         private DataTable LoadDataFromDatabase()
         {
-            string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\KentGab\Desktop\Resort System\GIGI RESORTT\ResortReservationSystem.mdb";
+            string fileName = "ResortReservationSystem.mdb";
+            string path = AppDomain.CurrentDomain.BaseDirectory + fileName;
+            string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + path;
             OleDbConnection connection = new OleDbConnection(connectionString);
+
 
             try
             {
@@ -136,19 +139,72 @@ namespace GIGI_RESORTT
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                int selectedIndex = dataGridView1.SelectedRows[0].Index;
+
+                // Get the value of the ID column in the selected row
+                int guestId = Convert.ToInt32(dataGridView1[0, selectedIndex].Value);
+
+                // Create a connection to the database
+                string fileName = "ResortReservationSystem.mdb";
+                string path = AppDomain.CurrentDomain.BaseDirectory + fileName;
+                string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + path;
+                OleDbConnection connection = new OleDbConnection(connectionString);
+
+                try
                 {
-                    dataTable.Rows[row.Index].Delete();
+                    connection.Open();
+                    Console.WriteLine("Connected");
+
+                    // Create a SQL DELETE command to remove the row from the Guests table
+                    OleDbCommand command = new OleDbCommand("DELETE FROM Guest WHERE ID = @ID", connection);
+                    command.Parameters.AddWithValue("@ID", guestId);
+                    command.ExecuteNonQuery();
+
+                    // Refresh the DataGridView to show the updated data
+                    dataGridView1.DataSource = LoadDataFromDatabase();
+
+                    MessageBox.Show("Guest deleted successfully!");
                 }
-                OleDbDataAdapter adapter = new OleDbDataAdapter();
-                string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\KentGab\Desktop\Resort System\GIGI RESORTT\ResortReservationSystem.mdb";
-                adapter.SelectCommand = new OleDbCommand("SELECT * FROM Guest", new OleDbConnection(connectionString));
-                OleDbCommandBuilder builder = new OleDbCommandBuilder(adapter);
-                adapter.Update(dataTable);
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
             }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string searchText = textBox1.Text.ToLower();
+            bool found = false;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchText))
+                    {
+                        dataGridView1.CurrentCell = cell;
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) break;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

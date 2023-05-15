@@ -39,25 +39,28 @@ namespace GIGI_RESORTT
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guests_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.resortReservationSystemDataSet = new GIGI_RESORTT.ResortReservationSystemDataSet();
             this.guests_tableTableAdapter = new GIGI_RESORTT.ResortReservationSystemDataSetTableAdapters.Guests_tableTableAdapter();
             this.tableAdapterManager = new GIGI_RESORTT.ResortReservationSystemDataSetTableAdapters.TableAdapterManager();
-            this.guests_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.resortReservationSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guestsTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.deleteButton = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guests_tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guestsTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -65,6 +68,7 @@ namespace GIGI_RESORTT
             this.addressDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.guests_tableBindingSource;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView1.Location = new System.Drawing.Point(-7, -2);
             this.dataGridView1.Name = "dataGridView1";
@@ -110,6 +114,11 @@ namespace GIGI_RESORTT
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.Width = 134;
             // 
+            // guests_tableBindingSource
+            // 
+            this.guests_tableBindingSource.DataMember = "Guests table";
+            this.guests_tableBindingSource.DataSource = this.resortReservationSystemDataSet;
+            // 
             // resortReservationSystemDataSet
             // 
             this.resortReservationSystemDataSet.DataSetName = "ResortReservationSystemDataSet";
@@ -126,11 +135,6 @@ namespace GIGI_RESORTT
             this.tableAdapterManager.Reservations_tableTableAdapter = null;
             this.tableAdapterManager.Rooms_tableTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = GIGI_RESORTT.ResortReservationSystemDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // guests_tableBindingSource
-            // 
-            this.guests_tableBindingSource.DataMember = "Guests table";
-            this.guests_tableBindingSource.DataSource = this.resortReservationSystemDataSet;
             // 
             // button1
             // 
@@ -171,23 +175,44 @@ namespace GIGI_RESORTT
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // GuestList
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(173, 311);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(67, 311);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 336);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "GuestList";
+            this.Name = "Form1";
             this.Text = "GuestList";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guests_tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guestsTableBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -228,5 +253,7 @@ namespace GIGI_RESORTT
         private Button deleteButton;
         private DataGridView dataGridView1;
         private Timer timer2;
+        private Button button2;
+        private TextBox textBox1;
     }
 }

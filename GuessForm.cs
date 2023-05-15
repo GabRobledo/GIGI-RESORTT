@@ -32,11 +32,9 @@ namespace GIGI_RESORTT
             string phone = this.PhoneText.Text;
             string email = this.EmailText.Text;
 
-            string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\KentGab\Desktop\Resort System\GIGI RESORTT\ResortReservationSystem.mdb";
-
-
-
-
+            string fileName = "ResortReservationSystem.mdb";
+            string path = AppDomain.CurrentDomain.BaseDirectory + fileName;
+            string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + path;
             OleDbConnection connection = new OleDbConnection(connectionString);
 
             try
@@ -79,6 +77,10 @@ namespace GIGI_RESORTT
             }
 
             System.Console.WriteLine(address);
+            // Close the form
+            this.Close();
+
+
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)

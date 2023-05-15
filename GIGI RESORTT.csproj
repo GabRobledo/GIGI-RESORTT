@@ -52,9 +52,12 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +74,80 @@
     </Compile>
     <Compile Include="AddReservation.Designer.cs">
       <DependentUpon>AddReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckIn.Designer.cs">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoom.Designer.cs">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart.Designer.cs">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResortReservationSystemDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortReservationSystemDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResortReservationSystemDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortReservationSystemDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResortReservationSystemDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortReservationSystemDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResortReservationSystemDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortReservationSystemDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoomList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomList.Designer.cs">
+      <DependentUpon>RoomList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResortPackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResortPackages.Designer.cs">
+      <DependentUpon>ResortPackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AvailableRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvailableRooms.Designer.cs">
+      <DependentUpon>AvailableRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="ReservationList.cs">
       <SubType>Form</SubType>
@@ -113,6 +190,33 @@
     <EmbeddedResource Include="AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart.resx">
+      <DependentUpon>Chart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckIn.resx">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomList.resx">
+      <DependentUpon>RoomList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResortPackages.resx">
+      <DependentUpon>ResortPackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvailableRooms.resx">
+      <DependentUpon>AvailableRooms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReservationList.resx">
       <DependentUpon>ReservationList.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +234,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -173,6 +278,17 @@
     <None Include="ResortReservationSystemDataSet2.xss">
       <DependentUpon>ResortReservationSystemDataSet2.xsd</DependentUpon>
     </None>
+    <None Include="ResortReservationSystemDataSet3.xsc">
+      <DependentUpon>ResortReservationSystemDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResortReservationSystemDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResortReservationSystemDataSet3.xss">
+      <DependentUpon>ResortReservationSystemDataSet3.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -181,6 +297,43 @@
     <Content Include="ResortReservationSystem.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="ResortReservationSystemDataSet4.xsc">
+      <DependentUpon>ResortReservationSystemDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResortReservationSystemDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResortReservationSystemDataSet4.xss">
+      <DependentUpon>ResortReservationSystemDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet5.xsc">
+      <DependentUpon>ResortReservationSystemDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResortReservationSystemDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResortReservationSystemDataSet5.xss">
+      <DependentUpon>ResortReservationSystemDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet6.xsc">
+      <DependentUpon>ResortReservationSystemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResortReservationSystemDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResortReservationSystemDataSet6.xss">
+      <DependentUpon>ResortReservationSystemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Untitled4.jpg" />
+    <None Include="Resources\Untitled3.jpg" />
+    <None Include="Resources\Untitled2.jpg" />
+    <None Include="Resources\Untitled.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
