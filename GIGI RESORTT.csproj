@@ -119,6 +119,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResortReservationSystemDataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ResortReservationSystemDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortReservationSystemDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResortReservationSystemDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortReservationSystemDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResortReservationSystemDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResortReservationSystemDataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RoomList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +344,39 @@
     </None>
     <None Include="ResortReservationSystemDataSet6.xss">
       <DependentUpon>ResortReservationSystemDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet7.xsc">
+      <DependentUpon>ResortReservationSystemDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResortReservationSystemDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResortReservationSystemDataSet7.xss">
+      <DependentUpon>ResortReservationSystemDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet8.xsc">
+      <DependentUpon>ResortReservationSystemDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResortReservationSystemDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResortReservationSystemDataSet8.xss">
+      <DependentUpon>ResortReservationSystemDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet9.xsc">
+      <DependentUpon>ResortReservationSystemDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="ResortReservationSystemDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResortReservationSystemDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResortReservationSystemDataSet9.xss">
+      <DependentUpon>ResortReservationSystemDataSet9.xsd</DependentUpon>
     </None>
     <None Include="Resources\Untitled4.jpg" />
     <None Include="Resources\Untitled3.jpg" />

@@ -51,25 +51,25 @@ namespace GIGI_RESORTT
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.EmailAddress = new System.Windows.Forms.TextBox();
+            this.TelephoneNumber = new System.Windows.Forms.TextBox();
+            this.CellphoneNumber = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.Roomtype = new System.Windows.Forms.ComboBox();
+            this.roomTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.resortReservationSystemDataSet6 = new GIGI_RESORTT.ResortReservationSystemDataSet6();
             this.resortReservationSystemDataSet5 = new GIGI_RESORTT.ResortReservationSystemDataSet5();
             this.roomTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.room_TypeTableAdapter = new GIGI_RESORTT.ResortReservationSystemDataSet5TableAdapters.Room_TypeTableAdapter();
-            this.resortReservationSystemDataSet6 = new GIGI_RESORTT.ResortReservationSystemDataSet6();
-            this.roomTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.room_TypeTableAdapter1 = new GIGI_RESORTT.ResortReservationSystemDataSet6TableAdapters.Room_TypeTableAdapter();
             this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.roomTypeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -202,7 +202,7 @@ namespace GIGI_RESORTT
             "Paid ",
             "Unpaid ",
             "Partially Paid"});
-            this.PaymentStatus.Location = new System.Drawing.Point(699, 361);
+            this.PaymentStatus.Location = new System.Drawing.Point(701, 361);
             this.PaymentStatus.Name = "PaymentStatus";
             this.PaymentStatus.Size = new System.Drawing.Size(98, 21);
             this.PaymentStatus.TabIndex = 27;
@@ -258,27 +258,27 @@ namespace GIGI_RESORTT
             this.label12.TabIndex = 33;
             this.label12.Text = "2. Contact Information";
             // 
-            // textBox3
+            // EmailAddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(27, 187);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 20);
-            this.textBox3.TabIndex = 34;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.EmailAddress.Location = new System.Drawing.Point(27, 187);
+            this.EmailAddress.Name = "EmailAddress";
+            this.EmailAddress.Size = new System.Drawing.Size(192, 20);
+            this.EmailAddress.TabIndex = 34;
+            this.EmailAddress.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // TelephoneNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(288, 187);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(194, 20);
-            this.textBox4.TabIndex = 35;
+            this.TelephoneNumber.Location = new System.Drawing.Point(288, 187);
+            this.TelephoneNumber.Name = "TelephoneNumber";
+            this.TelephoneNumber.Size = new System.Drawing.Size(194, 20);
+            this.TelephoneNumber.TabIndex = 35;
             // 
-            // textBox5
+            // CellphoneNumber
             // 
-            this.textBox5.Location = new System.Drawing.Point(542, 187);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(177, 20);
-            this.textBox5.TabIndex = 36;
+            this.CellphoneNumber.Location = new System.Drawing.Point(542, 187);
+            this.CellphoneNumber.Name = "CellphoneNumber";
+            this.CellphoneNumber.Size = new System.Drawing.Size(177, 20);
+            this.CellphoneNumber.TabIndex = 36;
             // 
             // label13
             // 
@@ -328,6 +328,16 @@ namespace GIGI_RESORTT
             this.Roomtype.ValueMember = "Rooms";
             this.Roomtype.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
+            // roomTypeBindingSource1
+            // 
+            this.roomTypeBindingSource1.DataMember = "Room Type";
+            this.roomTypeBindingSource1.DataSource = this.resortReservationSystemDataSet6;
+            // 
+            // resortReservationSystemDataSet6
+            // 
+            this.resortReservationSystemDataSet6.DataSetName = "ResortReservationSystemDataSet6";
+            this.resortReservationSystemDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // resortReservationSystemDataSet5
             // 
             this.resortReservationSystemDataSet5.DataSetName = "ResortReservationSystemDataSet5";
@@ -341,16 +351,6 @@ namespace GIGI_RESORTT
             // room_TypeTableAdapter
             // 
             this.room_TypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // resortReservationSystemDataSet6
-            // 
-            this.resortReservationSystemDataSet6.DataSetName = "ResortReservationSystemDataSet6";
-            this.resortReservationSystemDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // roomTypeBindingSource1
-            // 
-            this.roomTypeBindingSource1.DataMember = "Room Type";
-            this.roomTypeBindingSource1.DataSource = this.resortReservationSystemDataSet6;
             // 
             // room_TypeTableAdapter1
             // 
@@ -377,9 +377,9 @@ namespace GIGI_RESORTT
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.CellphoneNumber);
+            this.Controls.Add(this.TelephoneNumber);
+            this.Controls.Add(this.EmailAddress);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -404,10 +404,10 @@ namespace GIGI_RESORTT
             this.Name = "AddReservation";
             this.Text = "Add Reservation";
             this.Load += new System.EventHandler(this.AddReservation_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.roomTypeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomTypeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,9 +435,9 @@ namespace GIGI_RESORTT
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox EmailAddress;
+        private System.Windows.Forms.TextBox TelephoneNumber;
+        private System.Windows.Forms.TextBox CellphoneNumber;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

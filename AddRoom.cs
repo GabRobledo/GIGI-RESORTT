@@ -20,13 +20,40 @@ namespace GIGI_RESORTT
 
         private void AddRoom_Load(object sender, EventArgs e)
         {
+            RoomType[] roomTypes = new RoomType[]
+            {
+    new RoomType("Fan Room (6 pax)", 1750),
+    new RoomType("Fan Room (8 pax)", 2500),
+    new RoomType("Bahay Kubo (10 pax)", 3000),
+    new RoomType("Kamalig (12 pax)", 3700),
+    new RoomType("Aircon Room (2 pax)", 2500),
+    new RoomType("Aircon Room (8 pax)", 3500),
+    new RoomType("Aircon Room w/ CR (2 pax)", 3000)
+            };
+            Roomtype.DataSource = roomTypes;
+        }
 
+        public class RoomType
+        {
+            public string Name { get; set; }
+            public double CostPerDay { get; set; }
+
+            public RoomType(string name, double costPerDay)
+            {
+                Name = name;
+                CostPerDay = costPerDay;
+            }
+
+            public override string ToString()
+            {
+                return Name;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //string roomId = this.RoomId.Text;
-            string roomName = RoomName.Text;
+            string roomType = Roomtype.Text;
             string roomNumber = RoomNumber.Text;
             string pax = Pax.Text;
             string price = Price.Text;
@@ -43,10 +70,10 @@ namespace GIGI_RESORTT
                 connection.Open();
                 Console.WriteLine("Connected");
 
-                string query = "INSERT INTO Rooms ([Room Name], [Room Number], [Pax], [Price], [Inclusions], [Room Status]) VALUES (@RoomName, @RoomNumber, @Pax, @Price, @Inclusions, @RoomStatus)";
+                string query = "INSERT INTO Rooms ([Room Name], [Room Number], [Pax], [Price], [Inclusions], [Room Status]) VALUES (@RoomType, @RoomNumber, @Pax, @Price, @Inclusions, @RoomStatus)";
                 OleDbCommand command = new OleDbCommand(query, connection);
 
-                command.Parameters.AddWithValue("@RoomName", roomName);
+                command.Parameters.AddWithValue("@RoomType", roomType);
                 command.Parameters.AddWithValue("@RoomNumber", roomNumber);
                 command.Parameters.AddWithValue("@Pax", pax);
                 command.Parameters.AddWithValue("@Price", price);
@@ -61,20 +88,15 @@ namespace GIGI_RESORTT
 
                 command.ExecuteNonQuery();
 
-                MessageBox.Show("Reservation saved successfully!");
-
-                Form5 form = (Form5)Application.OpenForms["ReservationList"];
-                if (form != null)
-                {
-                    form.UpdateData();
-                }
+                MessageBox.Show("Room added successfully!");
+             
 
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                MessageBox.Show("Error adding reservation: " + ex.Message);
+                MessageBox.Show("Error adding room: " + ex.Message);
             }
             finally
             {
@@ -88,6 +110,16 @@ namespace GIGI_RESORTT
         }
 
         private void RoomName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Inclusions_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

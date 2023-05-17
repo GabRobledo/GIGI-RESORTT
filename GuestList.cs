@@ -94,6 +94,8 @@ namespace GIGI_RESORTT
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'resortReservationSystemDataSet9.Guest' table. You can move, or remove it, as needed.
+            this.guestTableAdapter.Fill(this.resortReservationSystemDataSet9.Guest);
             dataGridView1.DataSource = LoadDataFromDatabase();
 
         }
@@ -101,8 +103,8 @@ namespace GIGI_RESORTT
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            var guessform = new GuessForm();
-            guessform.Show();
+            var checkIn = new CheckIn();
+            checkIn.Show();
         }
 
 

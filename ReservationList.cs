@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GIGI_RESORTT
@@ -45,6 +46,8 @@ namespace GIGI_RESORTT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'resortReservationSystemDataSet7.Reservations' table. You can move, or remove it, as needed.
+            this.reservationsTableAdapter1.Fill(this.resortReservationSystemDataSet7.Reservations);
             // This line of code loads data into the 'resortReservationSystemDataSet2.Reservations' table. You can move, or remove it, as needed.
             this.reservationsTableAdapter.Fill(this.resortReservationSystemDataSet2.Reservations);
 
@@ -53,6 +56,16 @@ namespace GIGI_RESORTT
 
             // Set the data source for the DataGridView
             dataGridView1.DataSource = LoadDataFromDatabase();
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
+            dataGridView1.ClearSelection();
+
+            // Start a timer to update the DataGridView
+            var timer = new Timer();
+            timer.Interval = 5000; // 5 seconds
+            timer.Tick += timer1_Tick;
+            timer.Start();
 
         }
 
@@ -65,7 +78,12 @@ namespace GIGI_RESORTT
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            dataGridView1.Refresh();
+         
+        }
 
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {         
         }
 
 
@@ -149,6 +167,34 @@ namespace GIGI_RESORTT
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;        
+            // Save the currently selected row (if any) to restore it later
+            var selectedRow = dataGridView1.SelectedRows.Count > 0 ? dataGridView1.SelectedRows[0] : null;
+
+            // Update the DataGridView's data source here...
+
+            // Restore the selected row (if any) without selecting the first row
+            if (selectedRow != null)
+            {
+                dataGridView1.ClearSelection();
+                if (selectedRow.Index < dataGridView1.Rows.Count)
+                {
+                    dataGridView1.Rows[selectedRow.Index].Selected = true;
+                    dataGridView1.DataSource = LoadDataFromDatabase();
+                }
+                else if (dataGridView1.Rows.Count > 0)
+                {
+                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].Selected = true;
+                }
+            }
+            else
+            {
+                dataGridView1.ClearSelection();
+            }
         }
     }
 

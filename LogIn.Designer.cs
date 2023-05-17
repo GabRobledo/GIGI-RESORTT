@@ -109,7 +109,7 @@ namespace GIGI_RESORTT
             this.label5.TabIndex = 7;
             this.label5.Text = "Beach Resort";
             // 
-            // Form6
+            // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,8 +122,8 @@ namespace GIGI_RESORTT
             this.Controls.Add(this.Username);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "Form6";
-            this.Text = "Form6";
+            this.Name = "LogIn";
+            this.Text = "Log In";
             this.ResumeLayout(false);
             this.PerformLayout();
 

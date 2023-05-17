@@ -52,7 +52,7 @@ namespace GIGI_RESORTT
             }
         }
 
-          private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             AddRoom AddRoom = new AddRoom();
             AddRoom.Show();
@@ -86,5 +86,28 @@ namespace GIGI_RESORTT
                 if (found) break;
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Enabled = false; // Disable the timer temporarily to prevent re-entry
+
+            // Save the currently selected row (if any) to restore it later
+            int selectedRowIndex = dataGridView1.SelectedRows.Count > 0 ? dataGridView1.SelectedRows[0].Index : -1;
+
+            // Update the DataGridView's data source here...
+            dataGridView1.DataSource = LoadDataFromDatabase();
+
+            // Restore the selected row (if any) without selecting the first row
+            if (selectedRowIndex >= 0 && selectedRowIndex < dataGridView1.Rows.Count)
+            {
+                dataGridView1.Rows[selectedRowIndex].Selected = true;
+            }
+            else
+            {
+                dataGridView1.ClearSelection();
+            }
+
+            timer1.Enabled = true; // Re-enable the timer
+        }
+        }
     }
-}

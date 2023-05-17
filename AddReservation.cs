@@ -17,6 +17,9 @@ namespace GIGI_RESORTT
             string guestName = GuestName.Text;
             string roomType = Roomtype.Text;
             string NumberGuest = NumberGuests.Text;
+            string emailAddress = EmailAddress.Text;
+            string telephoneNumber = TelephoneNumber.Text;
+            string cellphoneNumber = CellphoneNumber.Text;
             DateTime checkInDate = CheckInDate.Value;
             DateTime checkOutDate = CheckOutDate.Value;
             string paymentStatus = PaymentStatus.SelectedItem != null ? PaymentStatus.SelectedItem.ToString() : null;
@@ -33,16 +36,20 @@ namespace GIGI_RESORTT
                 connection.Open();
                 Console.WriteLine("Connected");
 
-                string query = "INSERT INTO Reservations ([Guest Name], [Check-In Date], [Check-Out Date], [Room Type], [Number of Guests], [Total Cost], [Payment Status]) VALUES (@GuestName, @CheckInDate, @CheckOutDate, @RoomType, @NumberGuests, @TotalCost, @PaymentStatus)";
+                string query = "INSERT INTO Reservations ([Guest Name], [E-mail Address], [Telephone#], [Cellphone#], [Check-In Date], [Check-Out Date], [Room Type], [Number of Guests], [Total Cost], [Payment Status]) VALUES (@GuestName, @EmailAddress, @TelephoneNumber, @CellphoneNumber, @CheckInDate, @CheckOutDate, @RoomType, @NumberGuests, @TotalCost, @PaymentStatus)";
                 OleDbCommand command = new OleDbCommand(query, connection);
 
                 command.Parameters.AddWithValue("@GuestName", guestName);
+                command.Parameters.AddWithValue("@EmailAddress", emailAddress);
+                command.Parameters.AddWithValue("@TelephoneNumber", telephoneNumber);
+                command.Parameters.AddWithValue("@CellphoneNumber", cellphoneNumber);
                 command.Parameters.AddWithValue("@CheckInDate", checkInDate);
                 command.Parameters.AddWithValue("@CheckOutDate", checkOutDate);
                 command.Parameters.AddWithValue("@RoomType", roomType);
                 command.Parameters.AddWithValue("@NumberGuest", NumberGuest);
                 command.Parameters.AddWithValue("@TotalCost", totalcost);
                 command.Parameters.AddWithValue("@PaymentStatus", paymentStatus);
+
 
                 if (paymentStatus == null)
                 {

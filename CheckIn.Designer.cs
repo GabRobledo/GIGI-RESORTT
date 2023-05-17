@@ -36,16 +36,13 @@ namespace GIGI_RESORTT
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.GuestName = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.EmailAddress = new System.Windows.Forms.TextBox();
+            this.TelephoneNumber = new System.Windows.Forms.TextBox();
+            this.CellphoneNumber = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,11 +51,19 @@ namespace GIGI_RESORTT
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.CheckOutDate = new System.Windows.Forms.DateTimePicker();
+            this.CheckInDate = new System.Windows.Forms.DateTimePicker();
+            this.label = new System.Windows.Forms.Label();
+            this.Roomtype = new System.Windows.Forms.ComboBox();
+            this.TotalCost = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.PaymentStatus = new System.Windows.Forms.ComboBox();
+            this.NumberGuests = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.RoomNumber = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -126,12 +131,12 @@ namespace GIGI_RESORTT
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // GuestName
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.GuestName.Location = new System.Drawing.Point(41, 78);
+            this.GuestName.Name = "GuestName";
+            this.GuestName.Size = new System.Drawing.Size(100, 20);
+            this.GuestName.TabIndex = 7;
             // 
             // textBox2
             // 
@@ -147,33 +152,27 @@ namespace GIGI_RESORTT
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 9;
             // 
-            // textBox4
+            // EmailAddress
             // 
-            this.textBox4.Location = new System.Drawing.Point(41, 149);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 10;
+            this.EmailAddress.Location = new System.Drawing.Point(41, 149);
+            this.EmailAddress.Name = "EmailAddress";
+            this.EmailAddress.Size = new System.Drawing.Size(100, 20);
+            this.EmailAddress.TabIndex = 10;
             // 
-            // textBox5
+            // TelephoneNumber
             // 
-            this.textBox5.Location = new System.Drawing.Point(261, 149);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(98, 20);
-            this.textBox5.TabIndex = 11;
+            this.TelephoneNumber.Location = new System.Drawing.Point(261, 149);
+            this.TelephoneNumber.Name = "TelephoneNumber";
+            this.TelephoneNumber.Size = new System.Drawing.Size(98, 20);
+            this.TelephoneNumber.TabIndex = 11;
             // 
-            // textBox6
+            // CellphoneNumber
             // 
-            this.textBox6.Location = new System.Drawing.Point(479, 149);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 12;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(479, 309);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 15;
+            this.CellphoneNumber.Location = new System.Drawing.Point(479, 149);
+            this.CellphoneNumber.Name = "CellphoneNumber";
+            this.CellphoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.CellphoneNumber.TabIndex = 12;
+            this.CellphoneNumber.TextChanged += new System.EventHandler(this.CellphoneNumber_TextChanged);
             // 
             // richTextBox1
             // 
@@ -183,22 +182,6 @@ namespace GIGI_RESORTT
             this.richTextBox1.TabIndex = 18;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(41, 308);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(100, 21);
-            this.comboBox3.TabIndex = 21;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(181, 308);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(100, 21);
-            this.comboBox4.TabIndex = 22;
             // 
             // label6
             // 
@@ -272,57 +255,137 @@ namespace GIGI_RESORTT
             this.label13.TabIndex = 30;
             this.label13.Text = "Check-Out Date";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(487, 293);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 13);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Downpayment";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(52, 292);
+            this.label15.Location = new System.Drawing.Point(68, 291);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 13);
+            this.label15.Size = new System.Drawing.Size(60, 13);
             this.label15.TabIndex = 32;
-            this.label15.Text = "No. Children";
+            this.label15.Text = "No. Guests";
+            // 
+            // CheckOutDate
+            // 
+            this.CheckOutDate.Location = new System.Drawing.Point(221, 241);
+            this.CheckOutDate.Name = "CheckOutDate";
+            this.CheckOutDate.Size = new System.Drawing.Size(200, 20);
+            this.CheckOutDate.TabIndex = 34;
+            this.CheckOutDate.ValueChanged += new System.EventHandler(this.CheckOutDate_ValueChanged);
+            // 
+            // CheckInDate
+            // 
+            this.CheckInDate.Location = new System.Drawing.Point(15, 242);
+            this.CheckInDate.Name = "CheckInDate";
+            this.CheckInDate.Size = new System.Drawing.Size(200, 20);
+            this.CheckInDate.TabIndex = 35;
+            this.CheckInDate.ValueChanged += new System.EventHandler(this.CheckInDate_ValueChanged);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(504, 224);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(62, 13);
+            this.label.TabIndex = 36;
+            this.label.Text = "Room Type";
+            // 
+            // Roomtype
+            // 
+            this.Roomtype.FormattingEnabled = true;
+            this.Roomtype.Location = new System.Drawing.Point(479, 240);
+            this.Roomtype.Name = "Roomtype";
+            this.Roomtype.Size = new System.Drawing.Size(100, 21);
+            this.Roomtype.TabIndex = 37;
+            this.Roomtype.SelectedIndexChanged += new System.EventHandler(this.Roomtype_SelectedIndexChanged);
+            // 
+            // TotalCost
+            // 
+            this.TotalCost.Location = new System.Drawing.Point(675, 308);
+            this.TotalCost.Name = "TotalCost";
+            this.TotalCost.Size = new System.Drawing.Size(100, 20);
+            this.TotalCost.TabIndex = 38;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(697, 292);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 13);
+            this.label17.TabIndex = 39;
+            this.label17.Text = "Total Cost";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(781, 306);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 40;
+            this.button3.Text = "Calculate";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(485, 292);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 13);
+            this.label18.TabIndex = 41;
+            this.label18.Text = "Payment Status";
+            // 
+            // PaymentStatus
+            // 
+            this.PaymentStatus.FormattingEnabled = true;
+            this.PaymentStatus.Items.AddRange(new object[] {
+            "Fully Paid",
+            "Unpaid",
+            "Partially Paid"});
+            this.PaymentStatus.Location = new System.Drawing.Point(479, 306);
+            this.PaymentStatus.Name = "PaymentStatus";
+            this.PaymentStatus.Size = new System.Drawing.Size(100, 21);
+            this.PaymentStatus.TabIndex = 42;
+            // 
+            // NumberGuests
+            // 
+            this.NumberGuests.Location = new System.Drawing.Point(53, 307);
+            this.NumberGuests.Name = "NumberGuests";
+            this.NumberGuests.Size = new System.Drawing.Size(100, 20);
+            this.NumberGuests.TabIndex = 43;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(203, 292);
+            this.label16.Location = new System.Drawing.Point(697, 224);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 13);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "No. Adults";
+            this.label16.Size = new System.Drawing.Size(75, 13);
+            this.label16.TabIndex = 44;
+            this.label16.Text = "Room Number";
             // 
-            // dateTimePicker1
+            // RoomNumber
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(221, 241);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 34;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(15, 242);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 35;
+            this.RoomNumber.Location = new System.Drawing.Point(675, 240);
+            this.RoomNumber.Name = "RoomNumber";
+            this.RoomNumber.Size = new System.Drawing.Size(100, 20);
+            this.RoomNumber.TabIndex = 45;
             // 
             // CheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 558);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.RoomNumber);
             this.Controls.Add(this.label16);
+            this.Controls.Add(this.NumberGuests);
+            this.Controls.Add(this.PaymentStatus);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.TotalCost);
+            this.Controls.Add(this.Roomtype);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.CheckInDate);
+            this.Controls.Add(this.CheckOutDate);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -331,16 +394,13 @@ namespace GIGI_RESORTT
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.CellphoneNumber);
+            this.Controls.Add(this.TelephoneNumber);
+            this.Controls.Add(this.EmailAddress);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.GuestName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
@@ -349,7 +409,7 @@ namespace GIGI_RESORTT
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CheckIn";
-            this.Text = "Form6";
+            this.Text = "Check In";
             this.Load += new System.EventHandler(this.CheckIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,16 +425,13 @@ namespace GIGI_RESORTT
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox GuestName;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox EmailAddress;
+        private System.Windows.Forms.TextBox TelephoneNumber;
+        private System.Windows.Forms.TextBox CellphoneNumber;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -383,10 +440,18 @@ namespace GIGI_RESORTT
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker CheckOutDate;
+        private System.Windows.Forms.DateTimePicker CheckInDate;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.ComboBox Roomtype;
+        private System.Windows.Forms.TextBox TotalCost;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox PaymentStatus;
+        private System.Windows.Forms.TextBox NumberGuests;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox RoomNumber;
     }
 }

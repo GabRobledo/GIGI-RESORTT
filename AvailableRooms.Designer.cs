@@ -31,21 +31,21 @@ namespace GIGI_RESORTT
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.availabilityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.availableRoomsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.resortReservationSystemDataSet8 = new GIGI_RESORTT.ResortReservationSystemDataSet8();
             this.availableRoomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.resortReservationSystemDataSet4 = new GIGI_RESORTT.ResortReservationSystemDataSet4();
             this.available_RoomsTableAdapter = new GIGI_RESORTT.ResortReservationSystemDataSet4TableAdapters.Available_RoomsTableAdapter();
+            this.available_RoomsTableAdapter1 = new GIGI_RESORTT.ResortReservationSystemDataSet8TableAdapters.Available_RoomsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.availableRoomsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableRoomsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet4)).BeginInit();
             this.SuspendLayout();
@@ -59,44 +59,6 @@ namespace GIGI_RESORTT
             this.label1.TabIndex = 0;
             this.label1.Text = "Available Rooms";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Sort by";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Room Type"});
-            this.comboBox1.Location = new System.Drawing.Point(95, 70);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(84, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Availability"});
-            this.comboBox2.Location = new System.Drawing.Point(185, 70);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(39, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(508, 415);
@@ -109,18 +71,18 @@ namespace GIGI_RESORTT
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.roomNumberDataGridViewTextBoxColumn,
             this.roomNameDataGridViewTextBoxColumn,
-            this.paxDataGridViewTextBoxColumn,
-            this.availabilityDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.availableRoomsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 113);
+            this.paxDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.availableRoomsBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(84, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(544, 278);
+            this.dataGridView1.Size = new System.Drawing.Size(440, 347);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -148,11 +110,15 @@ namespace GIGI_RESORTT
             this.paxDataGridViewTextBoxColumn.HeaderText = "Pax";
             this.paxDataGridViewTextBoxColumn.Name = "paxDataGridViewTextBoxColumn";
             // 
-            // availabilityDataGridViewTextBoxColumn
+            // availableRoomsBindingSource1
             // 
-            this.availabilityDataGridViewTextBoxColumn.DataPropertyName = "Availability";
-            this.availabilityDataGridViewTextBoxColumn.HeaderText = "Availability";
-            this.availabilityDataGridViewTextBoxColumn.Name = "availabilityDataGridViewTextBoxColumn";
+            this.availableRoomsBindingSource1.DataMember = "Available Rooms";
+            this.availableRoomsBindingSource1.DataSource = this.resortReservationSystemDataSet8;
+            // 
+            // resortReservationSystemDataSet8
+            // 
+            this.resortReservationSystemDataSet8.DataSetName = "ResortReservationSystemDataSet8";
+            this.resortReservationSystemDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // availableRoomsBindingSource
             // 
@@ -168,6 +134,10 @@ namespace GIGI_RESORTT
             // 
             this.available_RoomsTableAdapter.ClearBeforeFill = true;
             // 
+            // available_RoomsTableAdapter1
+            // 
+            this.available_RoomsTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,15 +145,13 @@ namespace GIGI_RESORTT
             this.ClientSize = new System.Drawing.Size(606, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form8";
-            this.Text = "Form8";
+            this.Text = "Available Rooms";
             this.Load += new System.EventHandler(this.Form8_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.availableRoomsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableRoomsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet4)).EndInit();
             this.ResumeLayout(false);
@@ -194,10 +162,6 @@ namespace GIGI_RESORTT
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private ResortReservationSystemDataSet4 resortReservationSystemDataSet4;
@@ -207,6 +171,8 @@ namespace GIGI_RESORTT
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paxDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn availabilityDataGridViewTextBoxColumn;
+        private ResortReservationSystemDataSet8 resortReservationSystemDataSet8;
+        private System.Windows.Forms.BindingSource availableRoomsBindingSource1;
+        private ResortReservationSystemDataSet8TableAdapters.Available_RoomsTableAdapter available_RoomsTableAdapter1;
     }
 }

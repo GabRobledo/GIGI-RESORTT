@@ -34,7 +34,6 @@ namespace GIGI_RESORTT
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.roomsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.resortReservationSystemDataSet3 = new GIGI_RESORTT.ResortReservationSystemDataSet3();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.resortReservationSystemDataSet1 = new GIGI_RESORTT.ResortReservationSystemDataSet1();
             this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,8 +48,8 @@ namespace GIGI_RESORTT
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inclusionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet1)).BeginInit();
@@ -84,15 +83,6 @@ namespace GIGI_RESORTT
             // 
             this.resortReservationSystemDataSet3.DataSetName = "ResortReservationSystemDataSet3";
             this.resortReservationSystemDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(39, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -139,12 +129,11 @@ namespace GIGI_RESORTT
             this.paxDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.inclusionsDataGridViewTextBoxColumn,
-            this.roomStatusDataGridViewTextBoxColumn,
-            this.actionsDataGridViewTextBoxColumn});
+            this.roomStatusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.roomsBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(15, 118);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(748, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(737, 268);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -190,12 +179,6 @@ namespace GIGI_RESORTT
             this.roomStatusDataGridViewTextBoxColumn.HeaderText = "Room Status";
             this.roomStatusDataGridViewTextBoxColumn.Name = "roomStatusDataGridViewTextBoxColumn";
             // 
-            // actionsDataGridViewTextBoxColumn
-            // 
-            this.actionsDataGridViewTextBoxColumn.DataPropertyName = "Actions";
-            this.actionsDataGridViewTextBoxColumn.HeaderText = "Actions";
-            this.actionsDataGridViewTextBoxColumn.Name = "actionsDataGridViewTextBoxColumn";
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(121, 59);
@@ -206,6 +189,12 @@ namespace GIGI_RESORTT
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // RoomList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,11 +203,10 @@ namespace GIGI_RESORTT
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "RoomList";
-            this.Text = "Form7";
+            this.Text = "Room List";
             this.Load += new System.EventHandler(this.RoomList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet3)).EndInit();
@@ -235,7 +223,6 @@ namespace GIGI_RESORTT
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private ResortReservationSystemDataSet1 resortReservationSystemDataSet1;
         private System.Windows.Forms.BindingSource roomsBindingSource;
@@ -245,6 +232,7 @@ namespace GIGI_RESORTT
         private ResortReservationSystemDataSet3TableAdapters.RoomsTableAdapter roomsTableAdapter1;
         private System.Windows.Forms.BindingSource resortReservationSystemDataSet3BindingSource;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
@@ -252,7 +240,6 @@ namespace GIGI_RESORTT
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn inclusionsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomStatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn actionsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Timer timer1;
     }
 }

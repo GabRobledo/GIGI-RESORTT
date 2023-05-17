@@ -28,7 +28,7 @@ namespace GIGI_RESORTT
 
 
             //Write a query to retrieve the data you want to display in the chart
-            string query = "SELECT Day, Costumers FROM Test";
+            string query = "SELECT [Check-In], ID FROM Guest";
 
             //Use a DataAdapter to fill a DataTable with the results of your query
             OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
@@ -37,14 +37,14 @@ namespace GIGI_RESORTT
 
             //Set the chart's DataSource property to the DataTable you created
             chart1.DataSource = dataTable;
-            chart2.DataSource = dataTable;
+            //chart2.DataSource = dataTable;
 
             //Set the chart's X and Y values to the appropriate columns in the DataTable
-            chart1.Series[0].XValueMember = "Day";
-            chart1.Series[0].YValueMembers = "Costumers";
+            chart1.Series[0].XValueMember = "Check-In";
+            chart1.Series[0].YValueMembers = "ID";
 
-            chart2.Series[0].XValueMember = "Day";
-            chart2.Series[0].YValueMembers = "Costumers";
+            //chart2.Series[0].XValueMember = "Day";
+            //chart2.Series[0].YValueMembers = "Costumers";
 
 
         }

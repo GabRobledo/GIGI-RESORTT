@@ -32,21 +32,18 @@ namespace GIGI_RESORTT
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.RoomId = new System.Windows.Forms.TextBox();
             this.RoomNumber = new System.Windows.Forms.TextBox();
-            this.RoomName = new System.Windows.Forms.TextBox();
             this.Price = new System.Windows.Forms.TextBox();
             this.Pax = new System.Windows.Forms.TextBox();
             this.Inclusions = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.RoomStatus = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.Roomtype = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -76,27 +73,12 @@ namespace GIGI_RESORTT
             this.label3.TabIndex = 2;
             this.label3.Text = "Inclusions";
             // 
-            // RoomId
-            // 
-            this.RoomId.Location = new System.Drawing.Point(30, 96);
-            this.RoomId.Name = "RoomId";
-            this.RoomId.Size = new System.Drawing.Size(100, 20);
-            this.RoomId.TabIndex = 3;
-            // 
             // RoomNumber
             // 
             this.RoomNumber.Location = new System.Drawing.Point(163, 96);
             this.RoomNumber.Name = "RoomNumber";
             this.RoomNumber.Size = new System.Drawing.Size(100, 20);
             this.RoomNumber.TabIndex = 4;
-            // 
-            // RoomName
-            // 
-            this.RoomName.Location = new System.Drawing.Point(295, 96);
-            this.RoomName.Name = "RoomName";
-            this.RoomName.Size = new System.Drawing.Size(100, 20);
-            this.RoomName.TabIndex = 5;
-            this.RoomName.TextChanged += new System.EventHandler(this.RoomName_TextChanged);
             // 
             // Price
             // 
@@ -119,15 +101,7 @@ namespace GIGI_RESORTT
             this.Inclusions.Size = new System.Drawing.Size(422, 60);
             this.Inclusions.TabIndex = 9;
             this.Inclusions.Text = "";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(30, 379);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Inclusions.TextChanged += new System.EventHandler(this.Inclusions_TextChanged);
             // 
             // button2
             // 
@@ -150,32 +124,23 @@ namespace GIGI_RESORTT
             this.RoomStatus.Size = new System.Drawing.Size(100, 21);
             this.RoomStatus.TabIndex = 12;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "ID";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(202, 80);
+            this.label5.Location = new System.Drawing.Point(191, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 13);
+            this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "No.";
+            this.label5.Text = "Number";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 80);
+            this.label6.Location = new System.Drawing.Point(43, 80);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Name";
+            this.label6.Text = "Room Name";
             // 
             // label7
             // 
@@ -204,26 +169,32 @@ namespace GIGI_RESORTT
             this.label9.TabIndex = 18;
             this.label9.Text = "Status";
             // 
+            // Roomtype
+            // 
+            this.Roomtype.FormattingEnabled = true;
+            this.Roomtype.Location = new System.Drawing.Point(30, 96);
+            this.Roomtype.Name = "Roomtype";
+            this.Roomtype.Size = new System.Drawing.Size(100, 21);
+            this.Roomtype.TabIndex = 19;
+            this.Roomtype.SelectedIndexChanged += new System.EventHandler(this.RoomType_SelectedIndexChanged);
+            // 
             // AddRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Roomtype);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.RoomStatus);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Inclusions);
             this.Controls.Add(this.Pax);
             this.Controls.Add(this.Price);
-            this.Controls.Add(this.RoomName);
             this.Controls.Add(this.RoomNumber);
-            this.Controls.Add(this.RoomId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -240,20 +211,17 @@ namespace GIGI_RESORTT
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox RoomId;
         private System.Windows.Forms.TextBox RoomNumber;
-        private System.Windows.Forms.TextBox RoomName;
         private System.Windows.Forms.TextBox Price;
         private System.Windows.Forms.TextBox Pax;
         private System.Windows.Forms.RichTextBox Inclusions;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox RoomStatus;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Roomtype;
     }
 }

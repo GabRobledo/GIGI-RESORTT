@@ -34,11 +34,15 @@ namespace GIGI_RESORTT
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberOfGuestsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.resortReservationSystemDataSet9 = new GIGI_RESORTT.ResortReservationSystemDataSet9();
             this.guests_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.resortReservationSystemDataSet = new GIGI_RESORTT.ResortReservationSystemDataSet();
             this.guests_tableTableAdapter = new GIGI_RESORTT.ResortReservationSystemDataSetTableAdapters.Guests_tableTableAdapter();
@@ -47,11 +51,13 @@ namespace GIGI_RESORTT
             this.resortReservationSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guestsTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.deleteButton = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.guestTableAdapter = new GIGI_RESORTT.ResortReservationSystemDataSet9TableAdapters.GuestTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guests_tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSetBindingSource)).BeginInit();
@@ -63,56 +69,74 @@ namespace GIGI_RESORTT
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.guests_tableBindingSource;
+            this.guestNameDataGridViewTextBoxColumn,
+            this.checkInDataGridViewTextBoxColumn,
+            this.checkOutDataGridViewTextBoxColumn,
+            this.roomTypeDataGridViewTextBoxColumn,
+            this.numberOfGuestsDataGridViewTextBoxColumn,
+            this.totalCostDataGridViewTextBoxColumn,
+            this.paymentStatusDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.guestBindingSource;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView1.Location = new System.Drawing.Point(-7, -2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(711, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 307);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // iDDataGridViewTextBoxColumn
+            // guestNameDataGridViewTextBoxColumn
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 134;
+            this.guestNameDataGridViewTextBoxColumn.DataPropertyName = "Guest Name";
+            this.guestNameDataGridViewTextBoxColumn.HeaderText = "Guest Name";
+            this.guestNameDataGridViewTextBoxColumn.Name = "guestNameDataGridViewTextBoxColumn";
             // 
-            // nameDataGridViewTextBoxColumn
+            // checkInDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 133;
+            this.checkInDataGridViewTextBoxColumn.DataPropertyName = "Check-In";
+            this.checkInDataGridViewTextBoxColumn.HeaderText = "Check-In";
+            this.checkInDataGridViewTextBoxColumn.Name = "checkInDataGridViewTextBoxColumn";
             // 
-            // addressDataGridViewTextBoxColumn
+            // checkOutDataGridViewTextBoxColumn
             // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.Width = 134;
+            this.checkOutDataGridViewTextBoxColumn.DataPropertyName = "Check-Out";
+            this.checkOutDataGridViewTextBoxColumn.HeaderText = "Check-Out";
+            this.checkOutDataGridViewTextBoxColumn.Name = "checkOutDataGridViewTextBoxColumn";
             // 
-            // phoneDataGridViewTextBoxColumn
+            // roomTypeDataGridViewTextBoxColumn
             // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.Width = 133;
+            this.roomTypeDataGridViewTextBoxColumn.DataPropertyName = "Room Type";
+            this.roomTypeDataGridViewTextBoxColumn.HeaderText = "Room Type";
+            this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
             // 
-            // emailDataGridViewTextBoxColumn
+            // numberOfGuestsDataGridViewTextBoxColumn
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 134;
+            this.numberOfGuestsDataGridViewTextBoxColumn.DataPropertyName = "Number of Guest/s";
+            this.numberOfGuestsDataGridViewTextBoxColumn.HeaderText = "Number of Guest/s";
+            this.numberOfGuestsDataGridViewTextBoxColumn.Name = "numberOfGuestsDataGridViewTextBoxColumn";
+            // 
+            // totalCostDataGridViewTextBoxColumn
+            // 
+            this.totalCostDataGridViewTextBoxColumn.DataPropertyName = "Total Cost";
+            this.totalCostDataGridViewTextBoxColumn.HeaderText = "Total Cost";
+            this.totalCostDataGridViewTextBoxColumn.Name = "totalCostDataGridViewTextBoxColumn";
+            // 
+            // paymentStatusDataGridViewTextBoxColumn
+            // 
+            this.paymentStatusDataGridViewTextBoxColumn.DataPropertyName = "Payment Status";
+            this.paymentStatusDataGridViewTextBoxColumn.HeaderText = "Payment Status";
+            this.paymentStatusDataGridViewTextBoxColumn.Name = "paymentStatusDataGridViewTextBoxColumn";
+            // 
+            // guestBindingSource
+            // 
+            this.guestBindingSource.DataMember = "Guest";
+            this.guestBindingSource.DataSource = this.resortReservationSystemDataSet9;
+            // 
+            // resortReservationSystemDataSet9
+            // 
+            this.resortReservationSystemDataSet9.DataSetName = "ResortReservationSystemDataSet9";
+            this.resortReservationSystemDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guests_tableBindingSource
             // 
@@ -161,23 +185,13 @@ namespace GIGI_RESORTT
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
             // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(537, 311);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 2;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(173, 311);
+            this.button2.Location = new System.Drawing.Point(208, 313);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -187,26 +201,31 @@ namespace GIGI_RESORTT
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 311);
+            this.textBox1.Location = new System.Drawing.Point(102, 315);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // guestTableAdapter
+            // 
+            this.guestTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 336);
+            this.ClientSize = new System.Drawing.Size(732, 348);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "GuestList";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guests_tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resortReservationSystemDataSetBindingSource)).EndInit();
@@ -239,21 +258,25 @@ namespace GIGI_RESORTT
         private ResortReservationSystemDataSet resortReservationSystemDataSet;
         private ResortReservationSystemDataSetTableAdapters.Guests_tableTableAdapter guests_tableTableAdapter;
         private ResortReservationSystemDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource guests_tableBindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource resortReservationSystemDataSetBindingSource;
         private System.Windows.Forms.BindingSource guestsTableBindingSource;
         private System.Windows.Forms.Timer timer1;
-        //private EventHandler guests_tableBindingSource_CurrentChanged;
-        private Button deleteButton;
         private DataGridView dataGridView1;
         private Timer timer2;
         private Button button2;
         private TextBox textBox1;
+        private ResortReservationSystemDataSet9 resortReservationSystemDataSet9;
+        private BindingSource guestBindingSource;
+        private ResortReservationSystemDataSet9TableAdapters.GuestTableAdapter guestTableAdapter;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn guestNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn checkInDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn checkOutDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn roomTypeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn numberOfGuestsDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn totalCostDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn paymentStatusDataGridViewTextBoxColumn;
     }
 }
