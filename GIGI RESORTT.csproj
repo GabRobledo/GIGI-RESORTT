@@ -312,6 +312,15 @@
     <Content Include="ResortReservationSystem.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\room.png" />
+    <None Include="Resources\reserve.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\nav.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\guest.png" />
+    <None Include="Resources\checkin.png" />
+    <None Include="Resources\bg.png" />
+    <None Include="Resources\186532327_104522091833723_6606113960753960489_n 1.png" />
     <None Include="ResortReservationSystemDataSet4.xsc">
       <DependentUpon>ResortReservationSystemDataSet4.xsd</DependentUpon>
     </None>
